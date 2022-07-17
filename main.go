@@ -18,7 +18,7 @@ func main() {
 	}
 	fmt.Println("Server Starting")
 	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/track", controllers.Track)
 	router.HandleFunc("/", controllers.Home).Methods("GET")
+	router.HandleFunc("/track", controllers.Track).Methods("POST")
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
