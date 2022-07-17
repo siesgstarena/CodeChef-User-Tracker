@@ -63,11 +63,12 @@ func ConvertExcellToArray(file string) ([]string, error) {
 	defer content.Close()
 	return data, nil
 }
-func WriteToExcell(file string, usersHaveSolved []types.UserSolveds, startDate string, endDate string) error {
+func WriteToExcell(file string, usersHaveSolved []types.UserSolveds, startDate string, endDate string) (string, error) {
 	content, err := excelize.OpenFile(file)
+	FileName := "./output.xlsx"
 	if err != nil {
 		fmt.Println("Error in opening file", err)
-		return err
+		return "", err
 	}
 	content.SetCellValue("Sheet1", "B1", "CodeChef")
 	content.SetCellValue("Sheet1", "C1", "Participation "+startDate+" to "+endDate)
@@ -82,19 +83,19 @@ func WriteToExcell(file string, usersHaveSolved []types.UserSolveds, startDate s
 	errs := content.SetColWidth("Sheet1", "C", "C", 100)
 	if errs != nil {
 		fmt.Println("Error in setting column width", err)
-		return err
+		return "", err
 	}
 	err = content.SetColWidth("Sheet1", "D", "D", 24)
 	if err != nil {
 		fmt.Println("Error in setting column width", err)
-		return err
+		return "", err
 	}
 
-	err = content.SaveAs("./output.xlsx")
+	err = content.SaveAs(FileName)
 	if err != nil {
 		fmt.Println("Error in saving file", err)
-		return err
+		return "", err
 	}
 	defer content.Close()
-	return nil
+	return FileName, nil
 }
