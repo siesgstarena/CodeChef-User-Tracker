@@ -18,6 +18,8 @@ func main() {
 	}
 	fmt.Println("Server Starting")
 	router := mux.NewRouter().StrictSlash(true)
+	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 	router.HandleFunc("/", controllers.Home).Methods("GET")
 	router.HandleFunc("/track", controllers.Track).Methods("POST")
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
