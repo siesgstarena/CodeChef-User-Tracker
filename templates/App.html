@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codechef User Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body class="main">
+    <div class="container main">
+        <div class="one">
+            <img src="pic.png" class="image">
+            <div class="innerDiv">
+              <form action="/track" enctype="multipart/form-data" id="myForm" method="post">
+              <div class="heading">
+                  <img src="logo.jpg" id="logo">
+                  <h2 >Codechef User Tracker</h2>
+              </div>
+              <div class="mb-3 mt-3">
+                  <label for="formGroupExampleInput" class="form-label">Starting Date</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" name="startingdate" >
+                </div>
+                
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label">Ending Date</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput2" name="endingdate" >
+                </div>
+                
+                <div class="mb-3">
+                  <br>
+                  <input class="form-control" type="file" name="datafile" accept=".xlsx" id="formFileMultiple" multiple>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn1">Submit</button>
+              </form>
+              </div>
+        </div>
+       
+    </div>
+   
+  </body>
+</html>
