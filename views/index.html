@@ -13,35 +13,35 @@
 </head>
 
 <body class="main">
-  <!-- <div class="container"></div> -->
-  <div class="one">
-    <img src="/static/assets/pic.png" class="image">
-    <div class="innerDiv">
-      <form action="/track" enctype="multipart/form-data" id="myForm" method="post">
-        <div class="heading">
-          <img
-            src="https://res.cloudinary.com/siesgstarena/image/upload/f_auto,q_auto/c_scale,h_64,w_60/v1599156841/arena/assets/arena.png"
-            id="logo">
-          <h2>Codechef User Tracker</h2>
-        </div>
-        <div class="mb-3 mt-3">
-          <label for="formGroupExampleInput" class="form-label">Starting Date</label>
-          <input type="date" class="form-control" id="formGroupExampleInput" name="startingdate">
-        </div>
+  <div class="container_one">
+    <div class="one">
+      <img src="/static/assets/pic.png" class="image">
+      <div class="innerDiv">
+        <form action="/track" enctype="multipart/form-data" id="myForm" method="post">
+          <div class="heading">
+            <img
+              src="https://res.cloudinary.com/siesgstarena/image/upload/f_auto,q_auto/c_scale,h_64,w_60/v1599156841/arena/assets/arena.png"
+              id="logo">
+            <h2>Codechef User Tracker</h2>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="formGroupExampleInput" class="form-label">Starting Date</label>
+            <input type="date" class="form-control" id="formGroupExampleInput" name="startingdate">
+          </div>
 
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Ending Date</label>
-          <input type="date" class="form-control" id="formGroupExampleInput2" name="endingdate">
-        </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Ending Date</label>
+            <input type="date" class="form-control" id="formGroupExampleInput2" name="endingdate">
+          </div>
 
-        <div class="mb-3">
-          <br>
-          <input class="form-control" type="file" name="datafile" accept=".xlsx" id="formFileMultiple" multiple>
-        </div>
+          <div class="mb-3">
+            <br>
+            <input class="form-control" type="file" name="datafile" accept=".xlsx" id="formFileMultiple" multiple>
+          </div>
 
-        <button type="submit" class="btn1">Submit</button>
-      </form>
-      <!-- </div> -->
+          <button type="submit" class="btn1">Submit</button>
+        </form>
+      </div>
     </div>
 
   </div>
