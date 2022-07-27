@@ -65,6 +65,10 @@
   text-align: center;
 }
 
+.heading_mobile{
+  display: none;
+}
+
 .form-label {
   font-size: 17px;
   font-weight: bold;
@@ -150,7 +154,7 @@
 
   .btn1 {
     position: relative;
-    left: 40%;
+    left: 35%;
     background: #0a58ca;
     color: white;
     border: none;
@@ -161,6 +165,13 @@
   }
 
   .heading {
+    display: none;
+  }
+
+  .heading_mobile {
+    position: relative;
+    top: 2rem;
+    display: block;
     text-align: center;
   }
 
