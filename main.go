@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
@@ -22,5 +23,6 @@ func main() {
 	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 	router.HandleFunc("/", controllers.Home).Methods("GET")
 	router.HandleFunc("/track", controllers.Track).Methods("POST")
-	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
+	muxWithMiddlewares := http.TimeoutHandler(router, time.Second*300, "Timeout!")
+	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), muxWithMiddlewares))
 }
