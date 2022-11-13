@@ -26,7 +26,15 @@ To run
     air
 ```
 
-Rus using docker
+#### Rus using docker
+
+copy the .env.exmaple to .env
+
 ```
-  docker compose up
+  cp .\.env.example .\.env
+```
+
+Build and run the image
+```
+  docker compose --env-file .env up
 ```
