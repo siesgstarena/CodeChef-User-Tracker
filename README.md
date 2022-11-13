@@ -1,4 +1,4 @@
-# CodeChef-Track-User
+# CodeChef-User-Tracker
 A web app written in Go to keep track of the arena members for their participation in official codechef contest which will help the guy to keep track easily.
 
 Link https://arena-codechef-tracker.herokuapp.com/
